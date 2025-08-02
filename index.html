@@ -3,29 +3,56 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>CRUD Usuarios</title>
+  <title>Login + CRUD</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
+  <!-- Vista de Login -->
+  <div class="container" id="loginView">
+    <h1>Iniciar Sesión</h1>
+    <form id="loginForm">
+      <input type="text" id="loginUser" placeholder="Usuario" required />
+      <input type="password" id="loginPass" placeholder="Contraseña" required />
+      <button type="submit">Entrar</button>
+    </form>
+    <p id="loginMessage"></p>
+  </div>
+
+  <!-- Vista CRUD oculta al principio -->
+  <div class="container" id="crudView" style="display: none;">
     <h1>CRUD de Usuarios</h1>
-    <form id="user-form">
-      <input type="text" id="name" placeholder="Nombre" required />
-      <input type="email" id="email" placeholder="Correo electrónico" required />
+
+    <form id="userForm">
+      <div class="form-row">
+        <input type="text" id="name" placeholder="Nombre" required />
+        <input type="text" id="lastname" placeholder="Apellido" required />
+      </div>
+      <div class="form-row">
+        <input type="email" id="email" placeholder="Correo electrónico" required />
+        <input type="tel" id="phone" placeholder="Teléfono" required />
+      </div>
       <button type="submit">Guardar</button>
     </form>
+
+    <p id="message"></p>
 
     <table>
       <thead>
         <tr>
           <th>Nombre</th>
+          <th>Apellido</th>
           <th>Correo</th>
+          <th>Teléfono</th>
           <th>Acciones</th>
         </tr>
       </thead>
-      <tbody id="user-table-body"></tbody>
+      <tbody id="userTableBody"></tbody>
     </table>
   </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
 
   <script src="script.js"></script>
 </body>
